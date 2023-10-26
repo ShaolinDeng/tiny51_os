@@ -11,6 +11,26 @@ https://mp.weixin.qq.com/s/ZzN3_c5IVqDCRGJhWJxMzw
 ## 烧录
 可以直接使用make flash进行烧录，但是要指定下自己的串口
 
+# 例子
+
+## demo_led
+
+
+
+```shell
+cd demo_led
+make flash
+```
+
+提示 根据时间的串口 修改Makefile 中 -p 
+```shell 
+ls /dev/tty.usb*           
+      /dev/tty.usbserial-1410
+```
+
+[编译烧录](doc/demo_led.jpg)
+
+
 # 基础技术讲解
 当我们使用12MHZ的晶振时，单片机的机器周期是1us，对于机器周期，我们把它看成单片机里的最小时间单位。
 1ms/1us=1000，也就是要计数1000个数，故T0初值=65535-1000+1（因为计数器在65536时才算溢出）=64536。
